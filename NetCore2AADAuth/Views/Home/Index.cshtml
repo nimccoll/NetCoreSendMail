@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h3>Some Information About Me</h3>
+
+<div class="row">
+    <div class="col-md-12">
+        <ul>
+            <li>Full Name: @ViewBag.DisplayName</li>
+            <li>First Name: @ViewBag.FirstName</li>
+            <li>Last Name: @ViewBag.LastName</li>
+            <li>Email: @ViewBag.Mail</li>
+            <li>Object Identifier: @ViewBag.ObjectId</li>
+            <li>UPN: @ViewBag.UserPrincipalName</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        Search by last name: <input type="text" class="type-ahead" />
+        <input type="hidden" id="hidUserID" />
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jqueryui/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Initialize the JQuery UI autocomplete control
+            $('.type-ahead').autocomplete({
+                source: function (request, response) {
+                    var ajaxUrl = '/Home/People/?searchText=';
+
+                    $.ajax({
+                        url: ajaxUrl + request.term,
+                        type: 'GET',
+                        cache: false,
+                        dataType: 'json',
+                        success: function (json) {
+                            response(json);
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            console.log('error', textStatus, errorThrown);
+                        }
+                    });
+                },
+                minLength: 5,
+                select: function (event, ui) {
+                    $('.type-ahead').val(ui.item.label);
+                    $('#hidUserID').val(ui.item.value);
+                    return false;
+                }
+            });
+        });
+    </script>
+}

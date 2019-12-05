@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.852
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreSendMail", "NetCoreSendMail\NetCoreSendMail.csproj", "{ED67BF66-816F-41B9-9670-2913635AC350}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCore2AADAuth", "NetCore2AADAuth\NetCore2AADAuth.csproj", "{960F03B0-351B-46F0-9344-BFCA7D161779}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{ED67BF66-816F-41B9-9670-2913635AC350}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED67BF66-816F-41B9-9670-2913635AC350}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED67BF66-816F-41B9-9670-2913635AC350}.Release|Any CPU.Build.0 = Release|Any CPU
+		{960F03B0-351B-46F0-9344-BFCA7D161779}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{960F03B0-351B-46F0-9344-BFCA7D161779}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{960F03B0-351B-46F0-9344-BFCA7D161779}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{960F03B0-351B-46F0-9344-BFCA7D161779}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
